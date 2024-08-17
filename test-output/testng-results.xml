@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="5" failed="0" skipped="2">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-08-17T13:15:57 IST" name="Data Driven Framework" finished-at="2024-08-17T13:17:10 IST" duration-ms="73405">
+    <groups>
+    </groups>
+    <test started-at="2024-08-17T13:15:57 IST" name="Bank Manager Login Test 1" finished-at="2024-08-17T13:16:16 IST" duration-ms="18846">
+      <class name="testCases.BankManagerLoginTest">
+        <test-method signature="loginAsBankManager()[pri:0, instance:testCases.BankManagerLoginTest@42bc14c1]" started-at="2024-08-17T13:15:57 IST" name="loginAsBankManager" finished-at="2024-08-17T13:16:15 IST" duration-ms="18054" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginAsBankManager -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:testCases.BankManagerLoginTest@42bc14c1]" started-at="2024-08-17T13:16:15 IST" name="quit" finished-at="2024-08-17T13:16:16 IST" duration-ms="713" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- testCases.BankManagerLoginTest -->
+    </test> <!-- Bank Manager Login Test 1 -->
+    <test started-at="2024-08-17T13:16:17 IST" name="Bank Manager Login Test 2" finished-at="2024-08-17T13:16:38 IST" duration-ms="21436">
+      <class name="testCases.AddCustomerTest">
+        <test-method signature="addCustomerTest(java.util.Hashtable)[pri:0, instance:testCases.AddCustomerTest@149dd36b]" started-at="2024-08-17T13:16:20 IST" name="addCustomerTest" data-provider="bankManagerDp" finished-at="2024-08-17T13:16:37 IST" duration-ms="17290" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{browser=chrome, postcode=OK1234, Runmode=Y, lastname=Patel, firstname=Ditya}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addCustomerTest -->
+        <test-method signature="addCustomerTest(java.util.Hashtable)[pri:0, instance:testCases.AddCustomerTest@149dd36b]" started-at="2024-08-17T13:16:20 IST" name="addCustomerTest" data-provider="bankManagerDp" finished-at="2024-08-17T13:16:20 IST" duration-ms="588" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{browser=firefox, postcode=WE1234, Runmode=N, lastname=Rana, firstname=Megha}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[Skipping the test : AddCustomerTest as the Run mode to Data set is NO]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: Skipping the test : AddCustomerTest as the Run mode to Data set is NO
+at utilities.DataUtil.checkExecution(DataUtil.java:32)
+at testCases.AddCustomerTest.addCustomerTest(AddCustomerTest.java:20)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addCustomerTest -->
+        <test-method signature="addCustomerTest(java.util.Hashtable)[pri:0, instance:testCases.AddCustomerTest@149dd36b]" started-at="2024-08-17T13:16:20 IST" name="addCustomerTest" data-provider="bankManagerDp" finished-at="2024-08-17T13:16:38 IST" duration-ms="18053" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{browser=chrome, postcode=QW1234, Runmode=Y, lastname=Rana, firstname=Bhavin}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addCustomerTest -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:testCases.AddCustomerTest@149dd36b]" started-at="2024-08-17T13:16:20 IST" name="quit" finished-at="2024-08-17T13:16:20 IST" duration-ms="23" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:testCases.AddCustomerTest@149dd36b]" started-at="2024-08-17T13:16:37 IST" name="quit" finished-at="2024-08-17T13:16:38 IST" duration-ms="1179" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:testCases.AddCustomerTest@149dd36b]" started-at="2024-08-17T13:16:38 IST" name="quit" finished-at="2024-08-17T13:16:38 IST" duration-ms="788" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- testCases.AddCustomerTest -->
+    </test> <!-- Bank Manager Login Test 2 -->
+    <test started-at="2024-08-17T13:16:39 IST" name="Open Account Test" finished-at="2024-08-17T13:17:10 IST" duration-ms="31535">
+      <class name="testCases.OpenAccountTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.OpenAccountTest@4982cc36]" started-at="2024-08-17T13:15:57 IST" name="setUp" finished-at="2024-08-17T13:15:57 IST" duration-ms="28" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="openAccountTest(java.util.Hashtable)[pri:0, instance:testCases.OpenAccountTest@4982cc36]" started-at="2024-08-17T13:16:39 IST" name="openAccountTest" data-provider="bankManagerDp" finished-at="2024-08-17T13:16:54 IST" duration-ms="15261" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{currency=Rupee, browser=chrome, Runmode=Y, customer=Harry Potter}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openAccountTest -->
+        <test-method signature="openAccountTest(java.util.Hashtable)[pri:0, instance:testCases.OpenAccountTest@4982cc36]" started-at="2024-08-17T13:16:39 IST" name="openAccountTest" data-provider="bankManagerDp" finished-at="2024-08-17T13:16:39 IST" duration-ms="342" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{currency=Dollar, browser=chrome, Runmode=N, customer=Ron Weasly}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[Skipping the test : OpenAccountTest as the Run mode to Data set is NO]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: Skipping the test : OpenAccountTest as the Run mode to Data set is NO
+at utilities.DataUtil.checkExecution(DataUtil.java:32)
+at testCases.OpenAccountTest.openAccountTest(OpenAccountTest.java:21)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openAccountTest -->
+        <test-method signature="openAccountTest(java.util.Hashtable)[pri:0, instance:testCases.OpenAccountTest@4982cc36]" started-at="2024-08-17T13:16:39 IST" name="openAccountTest" data-provider="bankManagerDp" finished-at="2024-08-17T13:17:08 IST" duration-ms="29405" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{currency=Pound, browser=firefox, Runmode=Y, customer=Hermoine Granger}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openAccountTest -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:testCases.OpenAccountTest@4982cc36]" started-at="2024-08-17T13:16:39 IST" name="quit" finished-at="2024-08-17T13:16:39 IST" duration-ms="26" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:testCases.OpenAccountTest@4982cc36]" started-at="2024-08-17T13:16:54 IST" name="quit" finished-at="2024-08-17T13:16:55 IST" duration-ms="588" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:testCases.OpenAccountTest@4982cc36]" started-at="2024-08-17T13:17:08 IST" name="quit" finished-at="2024-08-17T13:17:10 IST" duration-ms="1841" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- testCases.OpenAccountTest -->
+    </test> <!-- Open Account Test -->
+  </suite> <!-- Data Driven Framework -->
+</testng-results>
