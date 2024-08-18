@@ -73,6 +73,8 @@ public class BaseTest {
 
 		playwright = Playwright.create();
 		
+		System.out.println("Start Playwright");
+		
 		pw.set(playwright);
 
 		switch (browserName) {
@@ -111,8 +113,11 @@ public class BaseTest {
 		bw.set(browser);
 
 		page = getBrowser().newPage();
+		
 		pg.set(page);
-		System.out.println("Url is : "+url);
+		
+		System.out.println("Url is : ");
+		
 		getPage().navigate(url);
 		
 		
