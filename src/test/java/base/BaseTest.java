@@ -112,7 +112,10 @@ public class BaseTest {
 
 		page = getBrowser().newPage();
 		pg.set(page);
+		System.out.println("Url is : "+url);
 		getPage().navigate(url);
+		
+		
 		log.info("Navigated to : " + url);
 
 		getPage().onceDialog(dialog -> {
