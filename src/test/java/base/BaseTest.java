@@ -224,13 +224,13 @@ public class BaseTest {
 	@AfterMethod
 	public void quit() {
 
-		
+		if (getPage() != null) {
 
 			getBrowser().close();
 			getPage().close();
 			getPlaywright().close();
 
-		
+		}
 	}
 
 }
