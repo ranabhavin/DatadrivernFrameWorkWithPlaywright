@@ -6,7 +6,7 @@
 	<artifactId>DataDrivenFramework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-<!--
+	<!--
 	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -103,12 +103,13 @@
 
 
 		<!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
+		<!--
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
 			<version>7.0.0</version>
 		</dependency>
-
+-->
 
 		<!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
 		<dependency>
