@@ -81,6 +81,7 @@ public class BaseTest {
 
 		case "chrome":
 			log.info("Launching Chrome Browser");
+			System.out.println("Chrome Browser Launched!!");
 			return getPlaywright().chromium()
 					.launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false));
 
