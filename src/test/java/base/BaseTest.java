@@ -106,11 +106,12 @@ public class BaseTest {
 
 	}
 
-	public void navigate(Browser browser, String url) {
+	public void navigate(Browser br, String url) {
 		
 		System.out.println("Navigate called");
 
-		this.browser = browser;
+		browser = br;
+		
 		bw.set(browser);
 
 		page = getBrowser().newPage();
