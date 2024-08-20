@@ -70,7 +70,7 @@ public class BaseTest {
 
 		System.out.println("Start Playwright");
 
-	//	pw.set(playwright);
+		// pw.set(playwright);
 
 		switch (browserName) {
 
@@ -91,8 +91,7 @@ public class BaseTest {
 
 		case "webkit":
 			log.info("Launching Webkit");
-			return playwright.webkit()
-					.launch(new BrowserType.LaunchOptions().setChannel("webkit").setHeadless(false));
+			return playwright.webkit().launch(new BrowserType.LaunchOptions().setChannel("webkit").setHeadless(false));
 
 		default:
 
@@ -107,13 +106,13 @@ public class BaseTest {
 
 		this.browser = browser;
 
-	//	bw.set(browser);
+		// bw.set(browser);
 
 		page = browser.newPage();
 
-		//pg.set(page);
+		// pg.set(page);
 
-		System.out.println("Url is : ");
+		System.out.println("Url is : " + url);
 
 		page.navigate(url);
 
@@ -218,13 +217,13 @@ public class BaseTest {
 	@AfterMethod
 	public void quit() {
 
-		if (page != null) {
+		if (page != null & browser != null) {
 
 			browser.close();
 			page.close();
 			playwright.close();
-
 		}
+
 	}
 
 }
