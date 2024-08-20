@@ -22,7 +22,7 @@ public class AddCustomerTest extends BaseTest {
 		System.out.println("Test");
 
 		browser = getBrowser(data.get("browser"));
-
+		
 		navigate(browser, Constants.URL);
 
 		click("bmBtn_CSS");

@@ -1,6 +1,5 @@
 package extentListener;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Date;
@@ -41,7 +40,12 @@ public class ExtentManager {
 		Date d = new Date();
 		fileName = d.toString().replace(":", "_").replace(" ", "_") + ".jpg";
 
-		BaseTest.getPage().screenshot(new Page.ScreenshotOptions().setPath(Paths.get("./reports/" + fileName)));
+		try {
+			BaseTest.page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("./reports/" + fileName)));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

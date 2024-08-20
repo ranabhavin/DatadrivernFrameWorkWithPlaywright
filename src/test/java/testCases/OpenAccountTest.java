@@ -24,9 +24,7 @@ public class OpenAccountTest extends BaseTest {
 
 		browser = getBrowser(data.get("browser"));
 
-	//	navigate(browser, Constants.URL);
-		
-		getPage().navigate(Constants.URL);
+		navigate(browser, Constants.URL);
 
 		click("bmBtn_CSS");
 		

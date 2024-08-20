@@ -23,29 +23,24 @@ public class BaseTest {
 
 	private Playwright playwright;
 	public Browser browser;
-	public Page page;
+	public static Page page;
 	private static Properties OR = new Properties();
 	private static FileInputStream fis;
 	private Logger log = Logger.getLogger(this.getClass());
 
-	private static ThreadLocal<Playwright> pw = new ThreadLocal<Playwright>();
-
-	private static ThreadLocal<Browser> bw = new ThreadLocal<Browser>();
-
-	private static ThreadLocal<Page> pg = new ThreadLocal<Page>();
-
-	public static Playwright getPlaywright() {
-		return pw.get();
-	}
-
-	public static Browser getBrowser() {
-		return bw.get();
-	}
-
-	public static Page getPage() {
-		return pg.get();
-	}
-
+	/*
+	 * private static ThreadLocal<Playwright> pw = new ThreadLocal<Playwright>();
+	 * 
+	 * private static ThreadLocal<Browser> bw = new ThreadLocal<Browser>();
+	 * 
+	 * private static ThreadLocal<Page> pg = new ThreadLocal<Page>();
+	 * 
+	 * public static Playwright getPlaywright() { return pw.get(); }
+	 * 
+	 * public static Browser getBrowser() { return bw.get(); }
+	 * 
+	 * public static Page getPage() { return pg.get(); }
+	 */
 	@BeforeSuite
 	public void setUp() {
 		PropertyConfigurator.configure("./src/test/resources/properties/log4j.properties");
@@ -68,35 +63,35 @@ public class BaseTest {
 	}
 
 	public Browser getBrowser(String browserName) {
-		
+
 		System.out.println("get browsr called");
 
 		playwright = Playwright.create();
-		
+
 		System.out.println("Start Playwright");
-		
-		pw.set(playwright);
+
+	//	pw.set(playwright);
 
 		switch (browserName) {
 
 		case "chrome":
 			log.info("Launching Chrome Browser");
 			System.out.println("Chrome Browser Launched!!");
-			return getPlaywright().chromium()
+			return playwright.chromium()
 					.launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false));
 
 		case "headless":
 			log.info("Launching Headless Mode");
-			return getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(true));
+			return playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true));
 
 		case "firefox":
 			log.info("Launching Firefox Browser");
-			return getPlaywright().firefox()
+			return playwright.firefox()
 					.launch(new BrowserType.LaunchOptions().setChannel("firefox").setHeadless(false));
 
 		case "webkit":
 			log.info("Launching Webkit");
-			return getPlaywright().webkit()
+			return playwright.webkit()
 					.launch(new BrowserType.LaunchOptions().setChannel("webkit").setHeadless(false));
 
 		default:
@@ -106,26 +101,25 @@ public class BaseTest {
 
 	}
 
-	public void navigate(Browser br, String url) {
-		
+	public void navigate(Browser browser, String url) {
+
 		System.out.println("Navigate called");
 
-		browser = br;
-		
-		bw.set(browser);
+		this.browser = browser;
 
-		page = getBrowser().newPage();
-		
-		pg.set(page);
-		
+	//	bw.set(browser);
+
+		page = browser.newPage();
+
+		//pg.set(page);
+
 		System.out.println("Url is : ");
-		
-		getPage().navigate(url);
-		
-		
+
+		page.navigate(url);
+
 		log.info("Navigated to : " + url);
 
-		getPage().onceDialog(dialog -> {
+		page.onceDialog(dialog -> {
 
 			try {
 
@@ -143,7 +137,7 @@ public class BaseTest {
 
 	public void click(String locatorKey) {
 		try {
-			getPage().locator(OR.getProperty(locatorKey)).click();
+			page.locator(OR.getProperty(locatorKey)).click();
 
 			log.info("Clicking on element :" + locatorKey);
 
@@ -162,7 +156,7 @@ public class BaseTest {
 
 	public void type(String locatorkey, String value) {
 		try {
-			getPage().locator(OR.getProperty(locatorkey)).fill(value);
+			page.locator(OR.getProperty(locatorkey)).fill(value);
 
 			log.info("Typing in the field : <b>" + locatorkey + " </b> entered the value as : <b>" + value + "<b>");
 
@@ -179,11 +173,11 @@ public class BaseTest {
 
 		}
 	}
-	
+
 	public void select(String locatorkey, String value) {
-		
+
 		try {
-			getPage().selectOption(OR.getProperty(locatorkey),new SelectOption().setLabel(value));
+			page.selectOption(OR.getProperty(locatorkey), new SelectOption().setLabel(value));
 
 			log.info("Selecting in the field : <b>" + locatorkey + " </b> selected the value as : <b>" + value + "<b>");
 
@@ -204,7 +198,7 @@ public class BaseTest {
 	public boolean isElementPresent(String locatorKey) {
 
 		try {
-			getPage().locator(OR.getProperty(locatorKey)).click();
+			page.locator(OR.getProperty(locatorKey)).click();
 
 			log.info("Finding on element : " + locatorKey);
 
@@ -224,11 +218,11 @@ public class BaseTest {
 	@AfterMethod
 	public void quit() {
 
-		if (getPage() != null) {
+		if (page != null) {
 
-			getBrowser().close();
-			getPage().close();
-			getPlaywright().close();
+			browser.close();
+			page.close();
+			playwright.close();
 
 		}
 	}
